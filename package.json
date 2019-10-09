@@ -1,0 +1,23 @@
+{
+  "name": "tmdi",
+  "version": "1.0.0",
+  "description": "A slackbot that gives you too much damn information",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/DKolia/TMDI.git"
+  },
+  "author": "DKID",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/DKolia/TMDI/issues"
+  },
+  "homepage": "https://github.com/DKolia/TMDI#readme",
+  "devDependencies": {
+    "axios": "^0.19.0",
+    "slackbots": "^1.2.0"
+  }
+}
