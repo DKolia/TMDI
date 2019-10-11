@@ -35,7 +35,22 @@ function handleMessage(message) {
     bot.postMessageToChannel("general", "Well hello right back!", params);
   } else if (message === "goodbye") {
     bot.postMessageToChannel("general", "Byeeeee <3", params);
+  } else if (message === "lorem") {
+    getLorem();
   }
 }
 
-console.log("Reaching Line 41");
+// Get Lorem Ipsum
+function getLorem() {
+  axios.get("http://loripsum.net/api/1/short/plaintext").then(res => {
+    const lorem = res.data;
+
+    bot.postMessageToChannel(
+      "general",
+      `Here is your Lorem Ipsum: ${lorem}`,
+      params
+    );
+  });
+}
+
+console.log("Reaching Line 64");
