@@ -1,6 +1,7 @@
 const Slackbot = require("slackbots");
 const axios = require("axios");
 const ourToken = require("./private/token.js");
+const getLoremFunction = require("./apis/lorem.js");
 
 // This instantiates the Bot
 const bot = new Slackbot({
@@ -36,21 +37,8 @@ function handleMessage(message) {
   } else if (message === "goodbye") {
     bot.postMessageToChannel("general", "Byeeeee <3", params);
   } else if (message === "lorem") {
-    getLorem();
+    getLoremFunction.getLorem();
   }
-}
-
-// Get Lorem Ipsum
-function getLorem() {
-  axios.get("http://loripsum.net/api/1/short/plaintext").then(res => {
-    const lorem = res.data;
-
-    bot.postMessageToChannel(
-      "general",
-      `Here is your Lorem Ipsum: ${lorem}`,
-      params
-    );
-  });
 }
 
 console.log("Reaching Line 64");
