@@ -2,6 +2,7 @@ const Slackbot = require("slackbots");
 const axios = require("axios");
 const ourToken = require("./private/token.js");
 const getLoremFunction = require("./apis/lorem.js");
+const weather = require('./apis/weather.js');
 
 // This instantiates the Bot
 const bot = new Slackbot({
