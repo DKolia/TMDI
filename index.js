@@ -1,9 +1,10 @@
 const Slackbot = require("slackbots");
 const axios = require("axios");
+const ourToken = require("./private/token.js");
 
 // This instantiates the Bot
 const bot = new Slackbot({
-  token: "xoxb-780031740516-782237325153-lqtLVOe20yidCYc1D374iSPM",
+  token: ourToken,
   name: "TMDI Bot"
 });
 
@@ -37,4 +38,4 @@ function handleMessage(message) {
   }
 }
 
-console.log("Reaching Line 37");
+console.log("Reaching Line 41");
