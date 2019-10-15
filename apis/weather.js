@@ -1,7 +1,7 @@
-const weather = class Weather {
-    constructor(){
-        this.name = "weather"
-    }
+class Weather {
+  constructor() {
+    this.name = "weather";
+  }
 }
 
-module.experts = new weather;
+module.experts = new Weather();
