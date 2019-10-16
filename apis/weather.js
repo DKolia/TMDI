@@ -4,4 +4,4 @@ class Weather {
   }
 }
 
-module.experts = new Weather();
+module.exports = new Weather();
