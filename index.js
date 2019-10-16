@@ -7,5 +7,5 @@
 const tmdiBot = require('./libs/tmdi.js');
 
 (async function () {
-  tmdiBot.run();
+  tmdiBot
 })();

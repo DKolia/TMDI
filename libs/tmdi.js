@@ -8,6 +8,7 @@ class TMDI {
     this.name = "TMDI";
     this.token = token;
     this.app_icon = { icon_emoji: ":robot_face:" };
+    this.init();
   }
   init() {
     this.slackbot = this.initSlackBot();
@@ -15,36 +16,29 @@ class TMDI {
   }
   initSlackBot() {
     return new Slackbot({
-      token: this.token,
-      name: this.name
+      name: this.name,
+      token: this.token
     });
   }
   initEvents() {
     this.start();
-    this.message(); // pass arguements 
-    this.error();
+    this.message();
+    // this.error();
   }
   message() {
     const bot = this.slackbot;
     const params = this.app_icon;
     this.on('message', data => {
-      console.log(data);
       if (data.type !== 'message') { return; }
-
-      if (message === "hello") {
+      let show = data.text.match(/weather/gi);
+      if (data.text === 'weather') {
+        console.log(show);
         bot.postMessageToChannel("general", "Well hello right back!", params);
-      } else if (message === "goodbye") {
-        bot.postMessageToChannel("general", "Byeeeee <3", params);
-      } else if (message === "lorem") {
-        getLoremFunction.getLorem();
       }
     })
   }
-  run() {
-    this.init();
-  }
   on(str, cb) {
-    return this.slackbot.on(str, cb);
+    this.slackbot.on(str, cb);
   }
   start() {
     const bot = this.slackbot;
